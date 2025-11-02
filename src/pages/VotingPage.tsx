@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 const VotingPage = () => {
   const [selectedCandidate, setSelectedCandidate] = useState('');
@@ -101,7 +102,7 @@ const VotingPage = () => {
                 <p className="text-sm text-muted-foreground">{candidates.find(c => c.id === selectedCandidate)?.party}</p>
               </div>
               <Button asChild variant="civic" size="lg">
-                <a href="/BotoBuddy/candidates">View All Candidates</a>
+                <Link to="/candidates">View All Candidates</Link>
               </Button>
             </CardContent>
           </Card>
